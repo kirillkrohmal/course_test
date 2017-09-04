@@ -26,4 +26,30 @@ public class ArrayContainsOneTest {
         boolean result = array.containsOnlyOne();
         assertThat(result, is(false));
     }
+
+    @Test
+    public void OnlyOne() {
+        ArrayContainsOne array = new ArrayContainsOne(new int[] {1, 1, 1});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void OnlyOne2() {
+        ArrayContainsOne array = new ArrayContainsOne(new int[] {1, 1, 1, 1, 1, 1});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(true));
+    }
+    @Test
+    public void notOnlyOne2() {
+        ArrayContainsOne array = new ArrayContainsOne(new int[] {0, 1, 1, 1, 1, 0});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(false));
+    }
+    @Test
+    public void notOnlyOne3() {
+        ArrayContainsOne array = new ArrayContainsOne(new int[] {1, 1, 0, 1, 1, 1});
+        boolean result = array.containsOnlyOne();
+        assertThat(result, is(false));
+    }
 }

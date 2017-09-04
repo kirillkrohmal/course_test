@@ -21,6 +21,25 @@ public class MonoArray {
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        //int count = 0;
+
+        boolean sequence = false;
+        int length = values.length;
+
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (values[j] == values[values.length - 1]) {
+                    sequence = true;
+                } else if (values[i + j] == values[j + 1]) {
+                    sequence = true;
+                    break;
+                } else if (values[i + j] != values[j + 1]) {
+                    sequence = false;
+                    break;
+                }
+            }
+        }
+        return sequence;
     }
 }
+

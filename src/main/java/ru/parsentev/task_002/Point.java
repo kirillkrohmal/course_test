@@ -20,7 +20,15 @@ public class Point {
         this.y = y;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     public double distanceTo(final Point point) {
-        throw new UnsupportedOperationException();
+        return Math.sqrt((Math.pow(point.y - this.y, 2)) + (Math.pow(point.x - this.x, 2)));
     }
 }

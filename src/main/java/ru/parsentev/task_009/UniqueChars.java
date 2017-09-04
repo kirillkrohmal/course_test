@@ -14,6 +14,15 @@ public class UniqueChars {
     }
 
     public int unique() {
-        throw new UnsupportedOperationException();
+        int count = 0;
+        char[] array = line.toCharArray();
+        char c = array[0];
+
+        for (int j = 0; j < line.length(); j++) {
+            if (c == array[j]) {
+                count++;
+            }
+        }
+        return count;
     }
 }

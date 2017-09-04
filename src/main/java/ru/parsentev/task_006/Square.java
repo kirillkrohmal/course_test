@@ -27,7 +27,34 @@ public class Square {
         this.fourth = fourth;
     }
 
+    public double S(Point first, Point second) {
+        return ((Math.pow(this.second.getX() - this.first.getX(), 2)) + (Math.pow(this.second.getY() - this.first.getY(), 2)));
+    }
+
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        double ab = S(first, second);
+        double bc = S(second, third);
+        double cd = S(third, fourth);
+        double da = S(fourth, first);
+        if (ab == bc && bc == cd && cd == da && da == ab) {
+            return true;
+        } else if ((Math.pow(ab, 2) + Math.pow(bc, 2) == Math.pow(cd, 2)) || (Math.pow(bc, 2) + Math.pow(cd, 2) == Math.pow(da, 2)) || (Math.pow(cd, 2) + Math.pow(da, 2) == Math.pow(ab, 2)) || (Math.pow(da, 2) + Math.pow(ab, 2) == Math.pow(bc, 2))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public double area() {
+        double ab = S(first, second);
+        double bc = S(second, third);
+        double cd = S(third, fourth);
+        double da = S(fourth, first);
+        if ((Math.pow(ab, 2) + Math.pow(bc, 2) != Math.pow(cd, 2)) || (Math.pow(bc, 2) + Math.pow(cd, 2) != Math.pow(da, 2)) || (Math.pow(cd, 2) + Math.pow(da, 2) != Math.pow(ab, 2)) || (Math.pow(da, 2) + Math.pow(ab, 2) != Math.pow(bc, 2))) {
+            throw new IllegalStateException();
+        } else {
+            double p = (ab + bc + cd + da) / 2;
+            return Math.pow(p, 2);
+        }
     }
 }

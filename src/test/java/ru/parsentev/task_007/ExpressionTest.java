@@ -19,6 +19,26 @@ public class ExpressionTest {
         Expression expr = new Expression("2+2");
         double result = expr.calc();
         assertThat(result, is(4d));
+    }@Test
+    public void calc1() {
+        Expression expr = new Expression("2-2");
+        double result = expr.calc();
+        assertThat(result, is(0d));
+    }@Test
+    public void calc2() {
+        Expression expr = new Expression("2*2");
+        double result = expr.calc();
+        assertThat(result, is(4d));
+    }@Test
+    public void calc3() {
+        Expression expr = new Expression("2/2");
+        double result = expr.calc();
+        assertThat(result, is(1d));
+    }@Test
+    public void calc4() {
+        Expression expr = new Expression("2^2");
+        double result = expr.calc();
+        assertThat(result, is(4d));
     }
 
     @Test(expected = IllegalStateException.class)

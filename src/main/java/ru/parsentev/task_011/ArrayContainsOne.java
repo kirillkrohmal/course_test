@@ -11,14 +11,29 @@ import static org.slf4j.LoggerFactory.getLogger;
  * @since 28.07.2016
  */
 public class ArrayContainsOne {
-    private static final Logger log = getLogger(ArrayContainsOne.class);
     private final int[] values;
+    private int count = 0;
 
     public ArrayContainsOne(final int[] values) {
         this.values = values;
     }
 
     public boolean containsOnlyOne() {
-        throw new UnsupportedOperationException();
+        boolean sequence = false;
+        int length = values.length;
+        int unit = 1;
+
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (values[j] == unit) {
+                    sequence = true;
+                    continue;
+                } else if (values[i + j] != unit) {
+                    return false;
+                }
+            }
+            if (sequence) break;
+        }
+        return sequence;
     }
 }

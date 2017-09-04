@@ -14,13 +14,36 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class TicTacToe {
     private static final Logger log = getLogger(TicTacToe.class);
 
-    private final int[][] values;
+    private int count = 0;
+    private int counter = 3;
+    private int[][] values;
 
     public TicTacToe(final int[][] values) {
-        this.values = values;
+        for (int i = 0; i < counter - count; i++) {
+            for (int j = 0; j < values.length; j++) {
+                if (values[i][0] == values[i][j]) {
+                    count++;
+                    if (count == 3) {
+                        break;
+                    }
+                }
+                if (values[i] == values[j]) {
+                    count++;
+                    if (count == 3) {
+                        break;
+                    }
+                }
+                if (values[j][i] == values[0][i]) {
+                    count++;
+                    if (count == 3) {
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     public boolean hasWinner() {
-        throw new UnsupportedOperationException();
+        return (counter == count) ? true : false;
     }
 }

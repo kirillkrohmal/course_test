@@ -13,6 +13,61 @@ import static org.junit.Assert.*;
  */
 @Ignore
 public class SequenceArrayTest {
+
+    @Test
+    public void notContains3() {
+        int[] array = {0, 1, 0, 1, 0};
+        SequenceArray arrayChoice = new SequenceArray(array);
+        boolean result = arrayChoice.containsOneSequence();
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void contains5() {
+        int[] array = {1, 1, 1, 1, 1};
+        SequenceArray arrayChoice = new SequenceArray(array);
+        boolean result = arrayChoice.containsOneSequence();
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void contains4() {
+        int[] array = {1, 1, 1, 1, 1, 1, 1};
+        SequenceArray arrayChoice = new SequenceArray(array);
+        boolean result = arrayChoice.containsOneSequence();
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void contains3() {
+        int[] array = {0, 1, 1, 1, 0};
+        SequenceArray arrayChoice = new SequenceArray(array);
+        boolean result = arrayChoice.containsOneSequence();
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void notContains1() {
+        int[] array = {0, 1, 0, 1, 0, 0, 1, 0, 1, 0};
+        SequenceArray arrayChoice = new SequenceArray(array);
+        boolean result = arrayChoice.containsOneSequence();
+        boolean expected = false;
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void contains2() {
+        int[] array = {0, 1, 1, 1, 1, 0, 1, 1, 1, 0};
+        SequenceArray arrayChoice = new SequenceArray(array);
+        boolean result = arrayChoice.containsOneSequence();
+        boolean expected = true;
+        assertThat(result, is(expected));
+    }
+
     @Test
     public void contains() {
         SequenceArray array = new SequenceArray(new int[] {0, 1, 1, 1, 0});

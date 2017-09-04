@@ -28,6 +28,30 @@ public class RightTriangle extends Triangle {
 
     @Override
     public boolean exists() {
-        return super.exists();
+        double ab = mathSqrt(first, second);
+        double bc = mathSqrt(second, third);
+        double ca = mathSqrt(third, first);
+        if ((Math.pow(ab, 2) + Math.pow(bc, 2) == Math.pow(ca, 2)) || (Math.pow(bc, 2) + Math.pow(ca, 2) == Math.pow(ab, 2)) || (Math.pow(ca, 2) + Math.pow(ab, 2) == Math.pow(bc, 2))) {
+            return true;
+        } else if ((Math.pow(ab, 2) + Math.pow(bc, 2) != Math.pow(ca, 2)) || (Math.pow(bc, 2) + Math.pow(ca, 2) != Math.pow(ab, 2)) || (Math.pow(ca, 2) + Math.pow(ab, 2) != Math.pow(bc, 2))) {
+            return false;
+        }
+        return true;
+    }
+
+    public double mathSqrt(Point first, Point b) {
+        return Math.sqrt((Math.pow(this.second.getX() - this.first.getX(), 2)) + (Math.pow(this.second.getY() - this.first.getY(), 2)));
+    }
+
+    public double area() {
+        double ab = mathSqrt(first, second);
+        double bc = mathSqrt(second, third);
+        double ca = mathSqrt(third, first);
+        if ((Math.pow(ab, 2) + Math.pow(bc, 2) != Math.pow(ca, 2)) || (Math.pow(bc, 2) + Math.pow(ca, 2) != Math.pow(ab, 2)) || (Math.pow(ca, 2) + Math.pow(ab, 2) != Math.pow(bc, 2))) {
+            throw new IllegalStateException();
+        } else {
+            double p = (ab + bc + ca) / 2;
+            return Math.sqrt(p * ((p - ab) * (p - bc) * (p - ca)));
+        }
     }
 }
