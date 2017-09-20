@@ -36,7 +36,9 @@ public class Square {
         double bc = S(second, third);
         double cd = S(third, fourth);
         double da = S(fourth, first);
-        if (ab == bc && bc == cd && cd == da && da == ab) {
+        double ac = S(first, third);
+        double bd = S(second, fourth);
+        if (ab == bc && bc == cd && cd == da && da == ab && ac == bd) {
             return true;
         } else if ((Math.pow(ab, 2) + Math.pow(bc, 2) == Math.pow(cd, 2)) || (Math.pow(bc, 2) + Math.pow(cd, 2) == Math.pow(da, 2)) || (Math.pow(cd, 2) + Math.pow(da, 2) == Math.pow(ab, 2)) || (Math.pow(da, 2) + Math.pow(ab, 2) == Math.pow(bc, 2))) {
             return true;

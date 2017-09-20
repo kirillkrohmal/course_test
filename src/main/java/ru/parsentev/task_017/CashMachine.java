@@ -28,6 +28,26 @@ public class CashMachine {
         this.values = values;
     }
 
+    public List<Integer> change (int a, int b, int c, int g) {
+        a = NUMBER_OF_ONE;
+        b = NUMBER_OF_TWO;
+        c = NUMBER_OF_FIVE;
+        g = NUMBER_OF_TEN;
+        List<Integer> result = null;
+        int num = 0;
+
+        for (int i = 0; a < i; i++) {
+            for (int j = 0; b < j; j++) {
+                for (int k = 0; c < k; k++) {
+                    for (int l = 0; g < l; l++) {
+                       num = a/1 + b/2 + c/5 + g/10;
+                       result.add(num);
+                    }
+                }
+            }
+        }
+        return result;
+    }
 
 
     public List<List<Integer>> exchange(int note) {
@@ -38,17 +58,17 @@ public class CashMachine {
         list.add(NUMBER_OF_TEN);
 
         for (int i = 0; i < values.length; i++) {
-                //money = values/note
-                //values -= note/[i];
-                list.get(note + money - 1 / note);
-                list.add(i);
-            }
-
-
-
-      /*  for (values[note] = 0; values[note] <= 10; values[note]++)
-            System.out.println(values);*/
-
+            list.add(i);
+        }
+        for (int i = 0; i < values.length; i++) {
+            list.add(i);
+        }
+        for (int i = 0; i < values.length; i++) {
+            list.add(i);
+        }
+        for (int i = 0; i < values.length; i++) {
+            list.add(i);
+        }
 
         return null;
     }

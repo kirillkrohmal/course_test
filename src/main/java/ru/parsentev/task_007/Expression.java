@@ -22,23 +22,26 @@ public class Expression {
 
     public double calc() {
         double value = 0;
-        //String s = "[(0-9)]";
-
         double a = Double.parseDouble(String.valueOf(expr.charAt(0)));
         double b = Double.parseDouble(String.valueOf(expr.charAt(2)));
         char c = expr.charAt(1);
-        if (expr.length() <= 1){
-            throw new IllegalStateException();
-        } else if (c == '+') {
-            value = a + b;
-        } else if (c == '-') {
-            value = a - b;
-        } else if (c == '*') {
-            value = a * b;
-        } else if (c == '/') {
-            value = a / b;
-        } else if (c == '^') {
-            value = Math.pow(a, b);
+
+        try {
+            if (expr.length() > 2) {
+                if (c == '+') {
+                    value = a + b;
+                } else if (c == '-') {
+                    value = a - b;
+                } else if (c == '*') {
+                    value = a * b;
+                } else if (c == '/') {
+                    value = a / b;
+                } else if (c == '^') {
+                    value = Math.pow(a, b);
+                }
+            }
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
         }
 
         return value;
