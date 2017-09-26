@@ -22,14 +22,19 @@ public class Expression {
 
     public double calc() {
         double value = 0;
-        double a = Double.parseDouble(String.valueOf(expr.charAt(0)));
-        double b = Double.parseDouble(String.valueOf(expr.charAt(2)));
-        char c = expr.charAt(1);
-
-        try {
-            if (expr.length() > 2) {
-                if (c == '+') {
-                    value = a + b;
+        for (int i = 0; i < expr.length(); i++) {
+            //double a = Double.parseDouble(String.valueOf(expr.charAt(0)));
+            //double b = Double.parseDouble(String.valueOf(expr.charAt(2)));
+            //expr.indexOf(expr);
+            char c = expr.charAt(1);
+            int a = expr.indexOf(i, i + 6);
+            int b = expr.indexOf("", a + 1);
+            int mark = expr.indexOf(i + 7);
+            try {
+                if (expr.length() > 2) {
+                    //if (c == '+') {
+                    if (c == '+')
+                        value = a + b;
                 } else if (c == '-') {
                     value = a - b;
                 } else if (c == '*') {
@@ -39,11 +44,10 @@ public class Expression {
                 } else if (c == '^') {
                     value = Math.pow(a, b);
                 }
+            } catch (IllegalStateException e) {
+                e.printStackTrace();
             }
-        } catch (IllegalStateException e) {
-            e.printStackTrace();
         }
-
         return value;
     }
 }
