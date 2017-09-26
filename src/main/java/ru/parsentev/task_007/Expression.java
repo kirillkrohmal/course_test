@@ -33,16 +33,17 @@ public class Expression {
             try {
                 if (expr.length() > 2) {
                     //if (c == '+') {
-                    if (c == '+')
+                    if (c == '+') {
                         value = a + b;
-                } else if (c == '-') {
-                    value = a - b;
-                } else if (c == '*') {
-                    value = a * b;
-                } else if (c == '/') {
-                    value = a / b;
-                } else if (c == '^') {
-                    value = Math.pow(a, b);
+                    } else if (c == '-') {
+                        value = a - b;
+                    } else if (c == '*') {
+                        value = a * b;
+                    } else if (c == '/') {
+                        value = a / b;
+                    } else if (c == '^') {
+                        value = Math.pow(a, b);
+                    }
                 }
             } catch (IllegalStateException e) {
                 e.printStackTrace();

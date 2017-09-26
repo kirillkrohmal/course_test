@@ -19,7 +19,14 @@ public class ExpressionTest {
         Expression expr = new Expression("2+2");
         double result = expr.calc();
         assertThat(result, is(4d));
-    }@Test
+    }
+    @Test
+    public void calc5() {
+        Expression expr = new Expression("100500+100500");
+        double result = expr.calc();
+        assertThat(result, is(4d));
+    }
+    @Test
     public void calc1() {
         Expression expr = new Expression("2-2");
         double result = expr.calc();
