@@ -15,11 +15,6 @@ public class Expression2 {
     }
 
     public String calc() {
-
-        if (expr.equals("parsentev&yandex.ru")) {
-            expr.replace("parsentev&", "parsentev&yandex.ru");
-        }
-
-        return expr;
+        return expr.replace("parsentev&yandex.ru", "parsentev&");
     }
 }
