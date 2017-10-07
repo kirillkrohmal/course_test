@@ -15,6 +15,17 @@ public class Expression2 {
     }
 
     public String calc() {
-        return expr.replace("parsentev&yandex.ru", "parsentev&");
+        char[] chars = expr.toCharArray();
+
+        int length = chars.length;
+        int length2 = chars.length - 1;
+
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length2; j++) {
+
+            }
+        }
+
+        return expr;
     }
 }
