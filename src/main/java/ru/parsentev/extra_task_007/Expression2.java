@@ -10,22 +10,16 @@ public class Expression2 {
 
     private String expr;
 
+    /**
+     * Тебе надо найти в строке символ & и скопировать в новую строку, то что находится до этого символа.
+     */
     public Expression2(final String expr) {
         this.expr = expr;
     }
 
     public String calc() {
-        char[] chars = expr.toCharArray();
-
-        int length = chars.length;
-        int length2 = chars.length - 1;
-
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length2; j++) {
-
-            }
-        }
-
-        return expr;
+        String expr2 = "&";
+        return expr = expr.substring(0, expr.indexOf(expr2));
     }
 }
+

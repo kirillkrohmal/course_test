@@ -16,7 +16,6 @@ import static org.slf4j.LoggerFactory.getLogger;
  */
 public class Combine {
     private static final Logger log = getLogger(Combine.class);
-
     private final int[] values;
 
     public Combine(final int[] values) {

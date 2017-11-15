@@ -12,6 +12,6 @@ public class Expression2Test {
     public void expr() {
         Expression2 expr = new Expression2("parsentev&yandex.ru");
         String result = expr.calc();
-        assertThat(result, is("parsentev&"));
+        assertThat(result, is("parsentev"));
     }
 }

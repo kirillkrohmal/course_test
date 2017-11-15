@@ -23,25 +23,22 @@ public class Expression {
     public double calc() {
         double value = 0;
         for (int i = 0; i < expr.length(); i++) {
-            //double a = Double.parseDouble(String.valueOf(expr.charAt(0)));
-            //double b = Double.parseDouble(String.valueOf(expr.charAt(2)));
-            //expr.indexOf(expr);
-            char c = expr.charAt(1);
-            int a = expr.indexOf(i, i + 6);
-            int b = expr.indexOf("", a + 1);
-            int mark = expr.indexOf(i + 7);
+            String[] strings = {"+", "-", "*", "/", "^"};
+
+            int a = Integer.parseInt(expr.substring(0, expr.indexOf(String.valueOf(strings))));
+            int b = Integer.parseInt(expr.substring(2, expr.indexOf(String.valueOf(strings))));
+            //int mark = expr.indexOf(i + 7);
             try {
                 if (expr.length() > 2) {
-                    //if (c == '+') {
-                    if (c == '+') {
+                    if (strings.equals("+")) {
                         value = a + b;
-                    } else if (c == '-') {
+                    } else if (strings.equals("-")) {
                         value = a - b;
-                    } else if (c == '*') {
+                    } else if (strings.equals("*")) {
                         value = a * b;
-                    } else if (c == '/') {
+                    } else if (strings.equals("/")) {
                         value = a / b;
-                    } else if (c == '^') {
+                    } else if (strings.equals("^")) {
                         value = Math.pow(a, b);
                     }
                 }
